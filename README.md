@@ -4,9 +4,7 @@ A unlimited running car game created with Unity.
 ## GamePreview
 
 
-
-https://user-images.githubusercontent.com/81753445/201840974-a13b62fa-a7f9-4c64-8e8d-5625e0f22aab.mp4
-
+https://user-images.githubusercontent.com/81753445/201841638-52d6f44b-dad6-4c5d-b10f-a272fc975055.mp4
 
 
 ## Features
