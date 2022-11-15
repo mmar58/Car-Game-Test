@@ -5,6 +5,7 @@
 
 # Unity3D related
 !/Assets
+!/Preview
 /Assets/AssetStoreTools/
 !/ProjectSettings
 *.unitypackage
