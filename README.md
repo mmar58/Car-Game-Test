@@ -1,7 +1,9 @@
 # Car Game Test
 A unlimited running car game created with Unity.
 
-## Features
+## GamePreview
+
+[![Gameplay Video]({image-url})]({https://github.com/mmar58/Car-Game-Test/blob/main/Preview/preview.mp4 "Gameplay Video")## Features
 
  1. Can select cars to play
  2. Different running and control speed for each car
