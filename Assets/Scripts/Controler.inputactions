@@ -1,0 +1,56 @@
+{
+    "name": "Controler",
+    "maps": [
+        {
+            "name": "Car",
+            "id": "10b0300f-1bda-45be-ae76-22fc88bb88e7",
+            "actions": [
+                {
+                    "name": "move",
+                    "type": "Value",
+                    "id": "36798295-61b9-45b8-bf41-92536fe6b147",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "419aa548-fca5-4f75-a321-df7c9891f2ae",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "93019223-7207-42b2-8219-f5554bdd79da",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b92b3536-b98d-41d8-8a13-e90e6189cb3b",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
