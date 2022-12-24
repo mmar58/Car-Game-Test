@@ -1,11 +1,12 @@
+using CarTest.Values;
 using UnityEngine;
 
 public class GameManager
 {
     //It uses for starting car and bridge movement after setupig all, so that looks like player car is moving
-    public static bool RunCar=false;
+    public bool RunCar=false;
     //It uses for indicating gameover or not
-    public static bool GameOver = false;
+    public bool GameOver = false;
     //Stores current scene number
     private SceneType sceneType;
     //Player Car Positions
@@ -22,13 +23,14 @@ public class GameManager
     private readonly float carStraightRotation = -1f;
     //Increase below properties for giving player more car choice but don't increase more than total cars in Resources/ProjectContext
     readonly private int playerCarChoiceLimit = 3;
-    readonly private float[] moveSpeed = { .033f, .05f, .07f };
+    readonly private float[] moveSpeed = { 3, 5, 7 };
     readonly private float[] runningSpeed = { 8, 12, 15 };
     readonly private string[] info = { "Slow running and control speed", "Normal running and control speed", "Fast running and control speed" };
 
     //lane or road properties
     readonly private float lanLeftLimit = -3.04f;
     readonly private float lanRightLimit = 3.04f;
+    readonly private float roadMoveSpeed = 6;
     //It will be calculated from upper two at start
     private float lanLenght;
     private float roadCreationDelay = 1f;//after this time(in seconds) road will be created
@@ -38,19 +40,15 @@ public class GameManager
     private float otherCarSpawningTime = 1;
     readonly private float otherCarSpawnTimeDifference = 1;
 
-    //Car Movement Boolean
-    private bool carMoveLeft = false,
-                 carMoveRight = false;
-
     //Game time
     private float currentTIme = 0;
 
-    //UI
-    private bool showRestartUi = false;
     public GameManager()
     {
         lanLenght=lanRightLimit-lanLeftLimit;
+        
     }
+    
     public System.Random RandomNumberProvider = new();
 
     public SceneType CurrentScene
@@ -84,15 +82,15 @@ public class GameManager
     {
         get { return playerCarChoiceLimit; }
     }
-    public float GetPlayerCarMoveSpeed
+    public float PlayerCarMoveSpeed
     {
         get { return moveSpeed[playerCarNumber]; }
     }
-    public float GetPlayerCarRunSpeed
+    public float PlayerCarRunSpeed
     {
         get { return runningSpeed[playerCarNumber]; }
     }
-    public string GetPlayerCarInfo
+    public string PlayerCarInfo
     {
         get { return info[playerCarNumber]; }
     }
@@ -108,16 +106,16 @@ public class GameManager
     {
         get { return lanRightLimit; }
     }
-    public float GetLanLength
+    public float LanLength
     {
         get { return lanLenght; }
     }
-    public float GetOtherCarSpawningTime
+    public float OtherCarSpawningTime
     {
         get { return otherCarSpawningTime; }
         set { otherCarSpawningTime = value; }
     }
-    public float GetOtherCarSpawnTimeDifference
+    public float OtherCarSpawnTimeDifference
     {
         get { return otherCarSpawnTimeDifference; }
     }
@@ -138,16 +136,7 @@ public class GameManager
     {
         get { return carRightRotation; }
     }
-    public bool CarMoveLeft
-    {
-        get { return carMoveLeft; }
-        set { carMoveLeft = value; }
-    }
-    public bool CarMoveRight
-    {
-        get { return carMoveRight; }
-        set { carMoveRight = value; }
-    }
+
     public float RoadCreationDelay
     {
         get { return roadCreationDelay; }
@@ -157,15 +146,16 @@ public class GameManager
     {
         get { return roadCreationTimeDelay; }
     }
-    public bool ShowRestartUi
+    public float RoadMoveSpeed
     {
-        get { return showRestartUi; }
-        set { showRestartUi = value; }
+        get { return roadMoveSpeed; }
     }
+
     public void ResetGameControlVariables()
     {
         GameOver = false;
         RunCar = false;
-        showRestartUi = false;
+        otherCarSpawningTime = 1;
+        roadCreationDelay = 1;
     }
 }
