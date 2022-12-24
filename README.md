@@ -1,7 +1,7 @@
 # Car Game Test
 A unlimited running car game created with Unity.
 
-Description:
+## Description:
 A car game fully created on zenject to demo zenject factory, signal and inject features
 
 ## GamePreview
